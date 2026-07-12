@@ -45,13 +45,13 @@ Repository Settings -> General -> Social preview
 Create a release when the `.skill` package is ready:
 
 ```text
-v1.2.1
+v2.0.0
 ```
 
 Attach:
 
 ```text
-SKU详情页导演Skill/SKU详情页导演Skill.skill
+dist/sku-detail-page-director.skill
 ```
 
 ## Repository Features

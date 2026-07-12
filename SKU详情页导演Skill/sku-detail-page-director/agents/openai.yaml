@@ -1,4 +1,0 @@
-interface:
-  display_name: "SKU 详情页导演"
-  short_description: "分析真实产品图并规划防同质化详情页与可执行生图提示词"
-  default_prompt: "Use $sku-detail-page-director to analyze my product images, recommend a safe production mode, and guide me through a differentiated e-commerce detail-page plan."

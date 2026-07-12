@@ -12,7 +12,8 @@ Also check that the installed folder contains:
 
 ```text
 SKILL.md
-references/
+  references/core-guardrails.md
+  references/workflow-contracts.md
 agents/
 ```
 
@@ -83,16 +84,12 @@ Deliverable: listing images and A+ modules
 Do not force every image into 9:16. Choose aspect ratio by module purpose.
 ```
 
-## Chinese Path Issues
+## V2 References Were Not Copied
 
-If a tool cannot read:
-
-```text
-SKU详情页导演Skill/
-```
-
-copy the inner folder instead:
+Copy the complete source directory, not just `SKILL.md`:
 
 ```text
-sku-detail-page-director/
+skills/sku-detail-page-director/
 ```
+
+V2 reads `core-guardrails.md` for every SKU and loads the current workflow, prompt, platform, and category references only when needed. A partial copy makes the workflow less reliable.

@@ -6,7 +6,7 @@ This roadmap tracks possible future improvements for KeRo SKU Skill.
 
 - Add more complete product-page examples for common e-commerce categories.
 - Add a stricter example for high-fidelity product compositing.
-- Add a lightweight checklist for first-time users.
+- Collect first-time-user feedback on the V2 staged workflow and package import.
 - Improve English and Traditional Chinese documentation as the Skill evolves.
 
 ## Medium Term
@@ -20,7 +20,7 @@ This roadmap tracks possible future improvements for KeRo SKU Skill.
 ## Long Term
 
 - Publish versioned GitHub Releases for `.skill` packages.
-- Maintain a stable changelog for every Skill rule update.
+- Maintain a stable changelog and package integrity check for every Skill rule update.
 - Add more category-specific prompt packs.
 - Build a small static website for installation and example browsing.
 - Collect real-world usage notes and convert them into safer workflow rules.

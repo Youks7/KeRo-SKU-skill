@@ -6,7 +6,7 @@ This guide explains how to install and start KeRo SKU Skill in Codex.
 
 Download this file:
 
-[`SKU详情页导演Skill.skill`](../SKU详情页导演Skill/SKU详情页导演Skill.skill)
+[`sku-detail-page-director.skill`](../dist/sku-detail-page-director.skill)
 
 Then import it into Codex through the Skill import flow.
 
@@ -21,13 +21,7 @@ sku-detail-page-director
 Copy this directory into your Codex skills directory:
 
 ```text
-SKU详情页导演Skill/sku-detail-page-director/
-```
-
-If your system or terminal has trouble with Chinese paths, copy only the inner folder:
-
-```text
-sku-detail-page-director/
+skills/sku-detail-page-director/
 ```
 
 The target folder should contain:
@@ -35,7 +29,11 @@ The target folder should contain:
 ```text
 SKILL.md
 agents/openai.yaml
-references/SKU详情页导演Skill_Lite_V1.2.1_防同质化生产优化版.md
+references/core-guardrails.md
+references/workflow-contracts.md
+references/prompt-production.md
+references/platform-profiles.md
+references/category-profiles.md
 ```
 
 ## Confirm Installation
@@ -76,6 +74,6 @@ You do not need to prepare everything at once. The Skill is designed to proceed 
 ## Common Installation Issues
 
 - If the Skill does not trigger, check whether the folder name is exactly `sku-detail-page-director`.
-- If the reference rules are not read, confirm that the `references/` folder is inside the Skill directory.
-- If Chinese paths display incorrectly, copy the inner English folder directly.
+- If the reference rules are not read, confirm that the whole `references/` folder is inside the Skill directory.
+- Do not copy only `SKILL.md`; V2 reads focused reference files when each workflow stage needs them.
 - If Codex directly generates prompts without analysis, explicitly say: "先执行阶段一，在我确认方向前不要输出正式生图 Prompt。"

@@ -11,10 +11,10 @@
 </p>
 
 <p align="center">
-  <a href="./SKU详情页导演Skill/SKU详情页导演Skill.skill">Download Skill</a> ·
+  <a href="./dist/sku-detail-page-director.skill">Download Skill</a> ·
   <a href="./docs/INSTALL.md">Install guide</a> ·
   <a href="./examples/sunglasses-detail-page.md">Examples</a> ·
-  <a href="./SKU详情页导演Skill/sku-detail-page-director/references/SKU详情页导演Skill_Lite_V1.2.1_防同质化生产优化版.md">Full rules</a>
+  <a href="./skills/sku-detail-page-director/SKILL.md">View Skill</a>
 </p>
 
 ---
@@ -110,17 +110,17 @@ Each screen includes:
 
 Download and import:
 
-[`SKU详情页导演Skill.skill`](./SKU详情页导演Skill/SKU详情页导演Skill.skill)
+[`sku-detail-page-director.skill`](./dist/sku-detail-page-director.skill)
 
 ### Option 2: Copy the Skill Directory
 
 Copy this directory into your Codex skills directory:
 
 ```text
-SKU详情页导演Skill/sku-detail-page-director/
+skills/sku-detail-page-director/
 ```
 
-If your system or tooling has trouble with Chinese paths, copy the inner `sku-detail-page-director/` folder directly.
+The source uses an English-only path to avoid tooling issues with Chinese paths.
 
 See [docs/INSTALL.md](./docs/INSTALL.md) for details.
 
@@ -163,23 +163,16 @@ Do not invent specifications, materials, certifications, claims, or reviews that
 ## Project Structure
 
 ```text
-SKU详情页导演Skill/
-├── sku-detail-page-director/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   └── references/
-│       └── SKU详情页导演Skill_Lite_V1.2.1_防同质化生产优化版.md
-└── SKU详情页导演Skill.skill
-
-docs/              Installation, troubleshooting, safety, and GitHub settings
-examples/          Practical e-commerce usage examples
-assets/            Repository cover and visual assets
-website/           Optional static website
+skills/sku-detail-page-director/     Source Skill and focused references
+dist/sku-detail-page-director.skill  Importable package
+scripts/package-skill.ps1            Package builder
+docs/                                Installation and troubleshooting
+examples/                            Practical e-commerce usage examples
 ```
 
 ## Version
 
-Current version: **Lite V1.2.1 anti-homogenization production edition**
+Current version: **v2.0.0 layered-workflow edition**
 
 See [CHANGELOG.md](./CHANGELOG.md) and [ROADMAP.md](./ROADMAP.md).
 

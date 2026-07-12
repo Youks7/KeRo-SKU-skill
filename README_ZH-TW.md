@@ -11,10 +11,10 @@
 </p>
 
 <p align="center">
-  <a href="./SKU详情页导演Skill/SKU详情页导演Skill.skill">下載 Skill</a> ·
+  <a href="./dist/sku-detail-page-director.skill">下載 Skill</a> ·
   <a href="./docs/INSTALL.md">安裝說明</a> ·
   <a href="./examples/sunglasses-detail-page.md">查看示例</a> ·
-  <a href="./SKU详情页导演Skill/sku-detail-page-director/references/SKU详情页导演Skill_Lite_V1.2.1_防同质化生产优化版.md">完整規則</a>
+  <a href="./skills/sku-detail-page-director/SKILL.md">查看 Skill</a>
 </p>
 
 ---
@@ -110,17 +110,17 @@ KeRo SKU Skill 是一個用於 **真實 SKU 商品詳情頁策劃與 AI 生圖 P
 
 下載這個文件並匯入 Codex：
 
-[`SKU详情页导演Skill.skill`](./SKU详情页导演Skill/SKU详情页导演Skill.skill)
+[`sku-detail-page-director.skill`](./dist/sku-detail-page-director.skill)
 
 ### 方法二：複製 Skill 目錄
 
 把下面這個目錄複製到 Codex 的 skills 目錄：
 
 ```text
-SKU详情页导演Skill/sku-detail-page-director/
+skills/sku-detail-page-director/
 ```
 
-如果你的系統或工具對中文路徑不穩定，優先複製內部的 `sku-detail-page-director/` 目錄。
+原始碼使用英文路徑，避免不同工具對中文路徑的相容性問題。
 
 更詳細步驟見 [docs/INSTALL.md](./docs/INSTALL.md)。
 
@@ -163,23 +163,16 @@ SKU详情页导演Skill/sku-detail-page-director/
 ## 項目結構
 
 ```text
-SKU详情页导演Skill/
-├── sku-detail-page-director/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   └── references/
-│       └── SKU详情页导演Skill_Lite_V1.2.1_防同质化生产优化版.md
-└── SKU详情页导演Skill.skill
-
-docs/              安裝、排錯、安全邊界和 GitHub 設定說明
-examples/          典型電商場景使用示例
-assets/            倉庫封面和展示素材
-website/           可選靜態網站
+skills/sku-detail-page-director/     Skill 原始碼與按需讀取的規則
+dist/sku-detail-page-director.skill  可直接匯入的發布包
+scripts/package-skill.ps1            發布包建置腳本
+docs/                                安裝與排錯
+examples/                            典型電商場景示例
 ```
 
 ## 版本
 
-目前版本：**Lite V1.2.1 防同質化生產優化版**
+目前版本：**v2.0.0 分層工作流版**
 
 版本變化見 [CHANGELOG.md](./CHANGELOG.md)。
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "SKU 详情页导演"
+  short_description: "从真实产品材料规划差异化详情页与逐屏制作简报"
+  default_prompt: "Use $sku-detail-page-director to analyze my product images and guide me through a truthful, differentiated product-page plan."

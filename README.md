@@ -11,10 +11,10 @@
 </p>
 
 <p align="center">
-  <a href="./SKU详情页导演Skill/SKU详情页导演Skill.skill">下载 Skill</a> ·
+  <a href="./dist/sku-detail-page-director.skill">下载 Skill</a> ·
   <a href="./docs/INSTALL.md">安装说明</a> ·
   <a href="./examples/sunglasses-detail-page.md">查看示例</a> ·
-  <a href="./SKU详情页导演Skill/sku-detail-page-director/references/SKU详情页导演Skill_Lite_V1.2.1_防同质化生产优化版.md">完整规则</a>
+  <a href="./skills/sku-detail-page-director/SKILL.md">查看 Skill</a>
 </p>
 
 ---
@@ -60,6 +60,18 @@ KeRo SKU Skill 是一个用于 **真实 SKU 商品详情页策划与 AI 生图 P
 | 想参考竞品但不想侵权 | [安全参考竞品示例](./examples/competitor-reference-safe-use.md) |
 | Skill 没有触发或产品变形 | [常见问题](./docs/TROUBLESHOOTING.md) |
 | 想了解商用边界 | [安全与使用边界](./docs/SAFETY_AND_USAGE.md) |
+
+## V2 为什么更好用
+
+旧版把几乎所有规则放在一个超过 2,000 行的文件里，并要求每个新项目完整读取。这样会挤占上下文，规则越多反而越容易被遗漏，也不利于跨轮续接。
+
+V2 的改变：
+
+- `SKILL.md` 只保留触发、分流、阶段门禁和交付原则。
+- 事实护栏、工作流契约、Prompt 生产、平台和类目规则拆成按需读取的参考文件。
+- 每轮用固定的“项目状态”记录事实、模式、方向和下一步，避免用户说“继续”后重新开始。
+- 详情页制作默认先完成前 3 屏，确认视觉系统后再扩展，减少整套返工。
+- `.skill` 安装包由脚本生成，避免发布包落后于源码。
 
 ## 三阶段工作流
 
@@ -110,17 +122,17 @@ KeRo SKU Skill 是一个用于 **真实 SKU 商品详情页策划与 AI 生图 P
 
 下载这个文件并导入 Codex：
 
-[`SKU详情页导演Skill.skill`](./SKU详情页导演Skill/SKU详情页导演Skill.skill)
+[`sku-detail-page-director.skill`](./dist/sku-detail-page-director.skill)
 
 ### 方法二：复制 Skill 目录
 
 把下面这个目录复制到 Codex 的 skills 目录：
 
 ```text
-SKU详情页导演Skill/sku-detail-page-director/
+skills/sku-detail-page-director/
 ```
 
-如果你的系统或工具对中文路径不稳定，优先复制内部的 `sku-detail-page-director/` 目录。
+目录本身采用英文路径，避免中文路径在不同工具中的兼容性问题。
 
 更详细步骤见 [docs/INSTALL.md](./docs/INSTALL.md)。
 
@@ -178,27 +190,39 @@ SKU详情页导演Skill/sku-detail-page-director/
 ## 项目结构
 
 ```text
-SKU详情页导演Skill/
-├── sku-detail-page-director/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   └── references/
-│       └── SKU详情页导演Skill_Lite_V1.2.1_防同质化生产优化版.md
-└── SKU详情页导演Skill.skill
+skills/sku-detail-page-director/
+├── SKILL.md                        触发、分流与阶段门禁
+├── agents/openai.yaml               Codex UI 元数据
+└── references/
+    ├── core-guardrails.md           事实、保真与竞争品边界
+    ├── workflow-contracts.md        三阶段输出与项目状态
+    ├── prompt-production.md         分模式 Prompt 与质检
+    ├── platform-profiles.md         平台适配
+    └── category-profiles.md         类目风险速查
 
-docs/              安装、排错、安全边界和 GitHub 设置说明
-examples/          典型电商场景使用示例
-assets/            仓库封面和展示素材
-website/           可选静态网站
+dist/sku-detail-page-director.skill  可直接导入的发布包
+scripts/package-skill.ps1            从源码重建发布包
+docs/                                安装、排错、安全边界和 GitHub 设置说明
+examples/                            典型电商场景使用示例
 ```
 
 ## 版本
 
-当前版本：**Lite V1.2.1 防同质化生产优化版**
+当前版本：**v2.0.0 分层工作流版**
 
 版本变化见 [CHANGELOG.md](./CHANGELOG.md)。
 
 后续规划见 [ROADMAP.md](./ROADMAP.md)。
+
+## 维护与发布
+
+修改 `skills/sku-detail-page-director/` 后，在仓库根目录运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\package-skill.ps1
+```
+
+它会重建 `dist/sku-detail-page-director.skill`。提交前请确认源码和安装包同时变化。
 
 ## 使用许可
 
