@@ -10,6 +10,7 @@ Prebuilt packages are in `packages/`:
 
 ```text
 sku-detail-page-director.skill
+refine-sunglasses-white-background.skill
 sku-product-core.skill
 sku-taobao.skill
 sku-tmall.skill
@@ -22,7 +23,7 @@ sku-tiktok-shop.skill
 kero-sku-skills-v1.3-bundle.zip
 ```
 
-The bundle contains the standalone `.skill` files; import the ones you want. Each platform package is self-contained.
+The bundle contains the standalone `.skill` files; import the ones you want. Each platform package is self-contained. `refine-sunglasses-white-background.skill` is the optional batch white-background image-refinement workflow.
 
 ## Method 1: Import the Complete V1.3 Suite
 
@@ -30,12 +31,13 @@ Download the bundle:
 
 [`kero-sku-skills-v1.3-bundle.zip`](../packages/kero-sku-skills-v1.3-bundle.zip)
 
-Extract it, then import `sku-product-core.skill` plus the marketplace `.skill` files you need. Import `sku-detail-page-director.skill` when you want platform selection, multi-platform routing, or legacy invocation.
+Extract it, then import `sku-product-core.skill` plus the marketplace `.skill` files you need. Import `sku-detail-page-director.skill` when you want platform selection, multi-platform routing, or legacy invocation. Import `refine-sunglasses-white-background.skill` when you need recursive sunglasses white-background refinement with strict lens-color and transparency preservation.
 
-For the complete eight-marketplace workflow, the installed Skill names should include:
+For the complete eight-marketplace workflow plus the optional sunglasses white-background workflow, the installed Skill names should include:
 
 ```text
 sku-detail-page-director
+refine-sunglasses-white-background
 sku-product-core
 sku-taobao
 sku-tmall
@@ -55,6 +57,7 @@ Copy the core, router, and required marketplace directories into your Codex skil
 
 ```text
 SKU详情页导演Skill/sku-detail-page-director/
+skills/refine-sunglasses-white-background/
 skills/sku-product-core/
 skills/sku-taobao/
 ...the marketplace directories you need
