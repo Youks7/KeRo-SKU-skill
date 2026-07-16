@@ -28,8 +28,6 @@ KeRo SKU Skill 是一組用於 **真實 SKU 事實分析、平台路由、商品
 ```text
 上傳真實產品圖
    ↓
-refine-sunglasses-white-background：可選的墨鏡白底批量精修與逐張質檢
-   ↓
 sku-product-core：產品事實與保真分析
    ↓
 總路由：平台與素材槽位選擇
@@ -58,7 +56,6 @@ V1.3 已將淘寶、天貓、京東、拼多多、1688、Amazon、Shopify 與 Ti
 | 想看完整流程 | [三階段工作流](#三階段工作流) |
 | 想做淘寶詳情頁 | [淘寶移動端詳情模塊示例](./examples/taobao-9-16-detail-page.md) |
 | 想做 Amazon A+ | [Amazon A+ 示例](./examples/amazon-a-plus-example.md) |
-| 想批量精修墨鏡純白底圖 | 使用 `$refine-sunglasses-white-background` |
 | 想做墨鏡類商品圖 | [墨鏡詳情頁示例](./examples/sunglasses-detail-page.md) |
 | 想參考競品但不想侵權 | [安全參考競品示例](./examples/competitor-reference-safe-use.md) |
 | Skill 沒有觸發或產品變形 | [常見問題](./docs/TROUBLESHOOTING.md) |
@@ -118,17 +115,14 @@ V1.3 已將淘寶、天貓、京東、拼多多、1688、Amazon、Shopify 與 Ti
 
 [`kero-sku-skills-v1.3-bundle.zip`](./packages/kero-sku-skills-v1.3-bundle.zip)
 
-合集同時包含 `refine-sunglasses-white-background.skill`，用於批量清理墨鏡鏡片與白底，同時保留每張原圖的鏡片顏色、透明度、結構與拍攝視角。
-
 舊地址 [`SKU详情页导演Skill.skill`](./SKU详情页导演Skill/SKU详情页导演Skill.skill) 只是兼容路由，不包含全部平台生產規則。
 
 ### 方法二：複製 Skill 目錄
 
-把需要的目錄複製到 Codex 的 skills 目錄：
+把下面這個目錄複製到 Codex 的 skills 目錄：
 
 ```text
 SKU详情页导演Skill/sku-detail-page-director/
-skills/refine-sunglasses-white-background/
 ```
 
 如果你的系統或工具對中文路徑不穩定，優先複製內部的 `sku-detail-page-director/` 目錄。

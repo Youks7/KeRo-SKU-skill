@@ -37,25 +37,6 @@ sku-product-core:
     - "做拼多多最低价SKU矩阵"
     - "设计淘宝轮播图"
 
-refine-sunglasses-white-background:
-  should_trigger:
-    - "批量精修整个墨镜图片文件夹为纯白底"
-    - "清理镜片环境反光但保持原颜色和透明度"
-    - "把黄色透明镜片做成无反光白底商品图"
-    - "递归处理墨镜三视图并输出PNG"
-    - "按确认样图处理全部墨镜白底图"
-    - "银色偏光镜片不能做成黑灰色"
-    - "黑灰透明镜片保持透光感并去除环境倒影"
-    - "检查墨镜白底图镜片是否串色"
-    - "清除墨镜主体下方的商品倒影"
-    - "使用$refine-sunglasses-white-background处理这批眼镜图"
-  should_not_trigger:
-    - "规划Amazon Main Image和A+"
-    - "制作淘宝详情长图"
-    - "给墨镜制作户外佩戴场景海报"
-    - "分析产品事实并生成SKU_CONTEXT"
-    - "为眼镜重新设计一种镜框款式"
-
 sku-taobao:
   should_trigger:
     - "制作淘宝搜索主图"

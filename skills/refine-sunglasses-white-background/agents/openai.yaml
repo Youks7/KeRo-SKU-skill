@@ -1,5 +1,0 @@
-interface:
-  display_name: "墨镜白底批量精修"
-  short_description: "批量精修墨镜白底图，锁定镜片颜色、透明度与商品结构"
-  default_prompt: "使用 $refine-sunglasses-white-background 递归处理墨镜原图文件夹，先做样图确认，再按各自原图的颜色与透明度批量生成并逐张验收。"
-

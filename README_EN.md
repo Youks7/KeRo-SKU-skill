@@ -30,8 +30,6 @@ It is designed to protect the actual product before generating commercial visual
 ```text
 Upload real product images
         ↓
-refine-sunglasses-white-background: optional batch white-background refinement and per-image QA
-        ↓
 sku-product-core: verified facts and fidelity boundaries
         ↓
 Router: marketplace and asset-slot selection
@@ -61,7 +59,6 @@ V1.3 includes dedicated Taobao, Tmall, JD.com, Pinduoduo, 1688, Amazon, Shopify,
 | Taobao product page | [Taobao mobile-detail module example](./examples/taobao-9-16-detail-page.md) |
 | Amazon A+ content | [Amazon A+ example](./examples/amazon-a-plus-example.md) |
 | V1.3 marketplace forward-test evidence | [Forward test report](./tests/FORWARD_TEST_REPORT.md) |
-| Batch-refine sunglasses on pure white | Use `$refine-sunglasses-white-background` |
 | Sunglasses or fashion accessories | [Sunglasses example](./examples/sunglasses-detail-page.md) |
 | Use competitor pages safely | [Competitor reference example](./examples/competitor-reference-safe-use.md) |
 | Troubleshooting | [Troubleshooting](./docs/TROUBLESHOOTING.md) |
@@ -121,17 +118,14 @@ For the complete V1.3 workflow, download the bundle and import `sku-product-core
 
 [`kero-sku-skills-v1.3-bundle.zip`](./packages/kero-sku-skills-v1.3-bundle.zip)
 
-The bundle also includes `refine-sunglasses-white-background.skill` for batch-cleaning sunglasses lenses and white backgrounds while preserving each source image's lens color, transparency, structure, and camera view.
-
 The legacy [`SKU详情页导演Skill.skill`](./SKU详情页导演Skill/SKU详情页导演Skill.skill) is only the compatibility router and does not contain all marketplace production rules.
 
-### Option 2: Copy Skill Directories
+### Option 2: Copy the Skill Directory
 
-Copy the directories you need into your Codex skills directory:
+Copy this directory into your Codex skills directory:
 
 ```text
 SKU详情页导演Skill/sku-detail-page-director/
-skills/refine-sunglasses-white-background/
 ```
 
 If your system or tooling has trouble with Chinese paths, copy the inner `sku-detail-page-director/` folder directly.

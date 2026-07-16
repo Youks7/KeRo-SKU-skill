@@ -28,8 +28,6 @@ KeRo SKU Skill 是一组用于 **真实 SKU 商品事实分析、平台路由、
 ```text
 上传真实产品图
    ↓
-refine-sunglasses-white-background：可选的墨镜白底批量精修与逐张质检
-   ↓
 sku-product-core：产品事实与保真分析
    ↓
 kero总路由：识别平台与素材槽位
@@ -46,7 +44,6 @@ V1.3 开发版不再把平台差异简化为视觉风格，而是分别处理各
 
 | Skill | 主要职责 |
 | --- | --- |
-| `$refine-sunglasses-white-background` | 墨镜/眼镜白底批量精修，锁定镜片原色、透明度、结构与视角 |
 | `$sku-detail-page-director` | 平台未知、旧版兼容和多平台路由 |
 | `$sku-product-core` | 事实、证据、保真模式和跨平台 `SKU_CONTEXT` |
 | `$sku-taobao` | 淘宝主图、轮播、SKU 属性图和详情模块 |
@@ -78,7 +75,6 @@ V1.3 开发版不再把平台差异简化为视觉风格，而是分别处理各
 | 想做 Amazon A+ | [Amazon A+ 示例](./examples/amazon-a-plus-example.md) |
 | 想看同一 SKU 的平台差异 | [V1.3 跨平台墨镜示例](./examples/cross-platform-sunglasses-v1.3.md) |
 | 查看八个平台前向测试结果 | [V1.3 前向测试报告](./tests/FORWARD_TEST_REPORT.md) |
-| 想批量精修墨镜纯白底图 | 使用 `$refine-sunglasses-white-background` |
 | 想做墨镜类商品图 | [墨镜详情页示例](./examples/sunglasses-detail-page.md) |
 | 想参考竞品但不想侵权 | [安全参考竞品示例](./examples/competitor-reference-safe-use.md) |
 | Skill 没有触发或产品变形 | [常见问题](./docs/TROUBLESHOOTING.md) |
@@ -131,12 +127,11 @@ V1.3 开发版不再把平台差异简化为视觉风格，而是分别处理各
 
 ## 快速安装
 
-当前仓库提供 **11 个 Skill**：1 个墨镜白底批量精修、1 个统一入口、1 个产品事实核心和 8 个平台专用 Skill。只安装旧版 [`SKU详情页导演Skill.skill`](./SKU详情页导演Skill/SKU详情页导演Skill.skill) 不等于安装完整套件；该文件现在只承担兼容路由。
+V1.3 完整版由 **10 个 Skill** 组成：1 个统一入口、1 个产品事实核心和 8 个平台专用 Skill。只安装旧版 [`SKU详情页导演Skill.skill`](./SKU详情页导演Skill/SKU详情页导演Skill.skill) 不等于安装完整套件；该文件现在只承担兼容路由。
 
 完整安装后应包含：
 
 ```text
-refine-sunglasses-white-background
 sku-detail-page-director
 sku-product-core
 sku-taobao
@@ -156,7 +151,7 @@ sku-tiktok-shop
 ```text
 请使用 $skill-installer，从公开 GitHub 仓库
 https://github.com/Youks7/KeRo-SKU-skill
-的 main 分支安装以下 11 个 Skill：
+的 main 分支安装以下 10 个 Skill：
 
 1. SKU详情页导演Skill/sku-detail-page-director
 2. skills/sku-product-core
@@ -168,13 +163,12 @@ https://github.com/Youks7/KeRo-SKU-skill
 8. skills/sku-amazon
 9. skills/sku-shopify
 10. skills/sku-tiktok-shop
-11. skills/refine-sunglasses-white-background
 
 要求：
 - 安装到当前用户的 Codex Skills 目录；
 - 不要只安装旧版 SKU详情页导演Skill.skill；
 - 安装后检查每个目录中是否存在 SKILL.md；
-- 列出最终安装的 11 个 Skill 名称和路径；
+- 列出最终安装的 10 个 Skill 名称和路径；
 - 如果同名目录已经存在，不要直接覆盖，先检查并报告版本冲突。
 ```
 
@@ -187,7 +181,7 @@ https://github.com/Youks7/KeRo-SKU-skill
 - [`V1.3 全平台合集`](./packages/kero-sku-skills-v1.3-bundle.zip)
 - [`独立平台安装包目录`](./packages/)
 
-如果当前 Codex 版本提供 `Import Skill` 或 `Upload Skill`，应导入全部 11 个独立 `.skill` 文件，不要把外层合集 ZIP 或旧版兼容包误当成完整套件。
+如果当前 Codex 版本提供 `Import Skill` 或 `Upload Skill`，应导入全部 10 个独立 `.skill` 文件，不要把外层合集 ZIP 或旧版兼容包误当成完整套件。
 
 ### 方法三：手动复制目录
 
@@ -225,12 +219,12 @@ git -c http.sslBackend=openssl clone https://github.com/Youks7/KeRo-SKU-skill.gi
 
 ## 新电脑安装与迁移
 
-换电脑时不要只把 GitHub 仓库作为普通项目打开。打开仓库可以让 Codex 阅读文件，但要让这些工作流在其他任务中被 `$skill-name` 调用，仍需按上面的推荐方法把 11 个 Skill 安装到新电脑的 Codex Skills 目录。
+换电脑时不要只把 GitHub 仓库作为普通项目打开。打开仓库可以让 Codex 阅读文件，但要让这些工作流在其他任务中被 `$skill-name` 调用，仍需按上面的推荐方法把 10 个 Skill 安装到新电脑的 Codex Skills 目录。
 
 建议迁移顺序：
 
 1. 在新电脑安装并登录 Codex。
-2. 使用[方法一](#方法一在-codex-中从-github-安装推荐)从 `main` 分支安装全部 11 个 Skill。
+2. 使用[方法一](#方法一在-codex-中从-github-安装推荐)从 `main` 分支安装全部 10 个 Skill。
 3. 新建 Codex 任务，让新安装的 Skill 被重新发现。
 4. 运行下面的完整性检查。
 5. 上传真实产品图片，并从 `$sku-detail-page-director` 开始工作。
@@ -240,7 +234,6 @@ git -c http.sslBackend=openssl clone https://github.com/Youks7/KeRo-SKU-skill.gi
 ```powershell
 $codexHome = if ($env:CODEX_HOME) { $env:CODEX_HOME } else { Join-Path $HOME ".codex" }
 $expected = @(
-    "refine-sunglasses-white-background",
     "sku-detail-page-director",
     "sku-product-core",
     "sku-taobao",
@@ -263,9 +256,9 @@ $expected | ForEach-Object {
 }
 ```
 
-正确结果是 11 项的 `Installed` 全部为 `True`。如果缺少任意平台 Skill，导演入口可以识别平台，但不能保证进入对应平台的完整生产规则。
+正确结果是 10 项的 `Installed` 全部为 `True`。如果缺少任意平台 Skill，导演入口可以识别平台，但不能保证进入对应平台的完整生产规则。
 
-以后需要更新时，让 Codex 先备份本机同名 Skill、比较版本，再从 `main` 重新安装全部 11 个目录；不要只更新导演入口，也不要在未检查差异时静默覆盖本地修改。
+以后需要更新时，让 Codex 先备份本机同名 Skill、比较版本，再从 `main` 重新安装全部 10 个目录；不要只更新导演入口，也不要在未检查差异时静默覆盖本地修改。
 
 ## 第一次使用
 
