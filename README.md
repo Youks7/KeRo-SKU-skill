@@ -345,6 +345,14 @@ website/           可选静态网站
 
 更多说明见 [NOTICE.md](./NOTICE.md) 和 [LICENSE](./LICENSE)。
 
+## 支持项目
+
+如果这个 Skill 对你有帮助，欢迎通过下面的赞赏码支持项目维护。赞赏完全自愿，不影响你对本项目的使用：
+
+<p align="center">
+  <img src="assets/sponsor.jpg" alt="项目赞赏码" width="240">
+</p>
+
 ## 关于作者
 
 **秋水 Kero**，AIGC 创作者，持续分享 AI、图片和电商视觉工作流。
